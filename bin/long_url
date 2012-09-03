@@ -1,0 +1,14 @@
+#!/usr/bin/env ruby
+
+$:.unshift(File.expand_path('../lib', File.dirname(__FILE__)))
+
+require 'long_url'
+
+url = ARGV.shift
+
+if !url
+  $stderr.puts "usage: #{$0} <url>"
+  exit(1)
+end
+
+puts LongUrl.call(url)
